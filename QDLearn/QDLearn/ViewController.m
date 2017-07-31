@@ -34,6 +34,11 @@
         [self.view addSubview:_customView];
 
     }
+    if ([self.title isEqualToString:@"扇形"]) {
+        self.customView.type = QDDrawTypeshanxing;
+        [self.view addSubview:self.customView];
+        
+    }
 }
 - (void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
 
@@ -99,5 +104,12 @@
     UIGraphicsEndImageContext();
     
 }
-
+#pragma mark - 
+- (QDView *)customView {
+    if (!_customView) {
+        _customView = [[QDView alloc]initWithFrame:self.view.bounds];
+        _customView.backgroundColor = [UIColor grayColor];
+    }
+    return _customView;
+}
 @end

@@ -35,6 +35,8 @@
         vc.title = @"水印";
     } else if ([segue.identifier isEqualToString:@"juxing"]) {
         vc.title = @"矩形";
+    } else if ([segue.identifier isEqualToString:@"shanxing"]) {
+        vc.title = @"扇形";
     }
 }
 
