@@ -27,9 +27,11 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UIViewController *vc = segue.destinationViewController;
     if ([segue.identifier isEqualToString:@"caijian"]) {
-        UIViewController *vc = segue.destinationViewController;
         vc.title = @"裁剪";
+    } else if ([segue.identifier isEqualToString:@"jieping"]) {
+        vc.title = @"截屏";
     }
 }
 

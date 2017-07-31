@@ -19,17 +19,31 @@
     if ([self.title isEqualToString:@"裁剪"]) {
         [self caijian];
     }
+    if ([self.title isEqualToString:@"截屏"]) {
+        UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"750x1334IBD.png"]];
+        imageView.frame = self.view.bounds;
+        [self.view addSubview:imageView];
+    }
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if ([self.title isEqualToString:@"截屏"]) {
+        [self jieping];
+    }
+}
+- (void)jieping {
+    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, 0);
+    CGContextRef ref = UIGraphicsGetCurrentContext();
+    [self.view.layer renderInContext:ref];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    NSData *data = UIImagePNGRepresentation(image);
+    
+    [data writeToFile:@"/Users/zhangbin/Desktop/CoderZbCoderZbCoderZb.jpg" atomically:YES];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 - (void)caijian {
    
-    
-    
     CGFloat bordeW = 10;
     UIImage *image = [UIImage imageNamed:@"750x1334IBD.png"];
     CGSize size = CGSizeMake(image.size.width + 2*bordeW, image.size.width + 2*bordeW);
