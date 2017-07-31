@@ -16,8 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor whiteColor];
 
 }
 
@@ -34,6 +33,8 @@
         vc.title = @"截屏";
     } else if ([segue.identifier isEqualToString:@"shuiyin"]) {
         vc.title = @"水印";
+    } else if ([segue.identifier isEqualToString:@"juxing"]) {
+        vc.title = @"矩形";
     }
 }
 

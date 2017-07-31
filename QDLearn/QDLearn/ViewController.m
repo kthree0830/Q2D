@@ -7,9 +7,9 @@
 //
 
 #import "ViewController.h"
-
+#import "QDView.h"
 @interface ViewController ()
-
+@property (nonatomic, strong) QDView *customView;
 @end
 
 @implementation ViewController
@@ -27,6 +27,16 @@
     if ([self.title isEqualToString:@"水印"]) {
         [self shuiyin];
     }
+    if ([self.title isEqualToString:@"矩形"]) {
+        _customView = [[QDView alloc]initWithFrame:self.view.bounds];
+        _customView.backgroundColor = [UIColor grayColor];
+        _customView.type = QDDrawTypeRect;
+        [self.view addSubview:_customView];
+
+    }
+}
+- (void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     if ([self.title isEqualToString:@"截屏"]) {
