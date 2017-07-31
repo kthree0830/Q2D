@@ -24,11 +24,32 @@
         imageView.frame = self.view.bounds;
         [self.view addSubview:imageView];
     }
+    if ([self.title isEqualToString:@"水印"]) {
+        [self shuiyin];
+    }
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     if ([self.title isEqualToString:@"截屏"]) {
         [self jieping];
     }
+}
+- (void)shuiyin {
+    
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 64, 375, 375)];
+    [self.view addSubview:imageView];
+    
+    UIImage *image = [UIImage imageNamed:@"login_logo@2x.png"];
+    UIGraphicsBeginImageContextWithOptions(image.size, NO, 0);
+    [image drawAtPoint:CGPointZero];
+    
+    NSString *string = @"水印";
+    [string drawAtPoint:CGPointMake(0, 128) withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:40],NSForegroundColorAttributeName:[UIColor blackColor]}];
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    imageView.image = newImage;
+    
+    UIGraphicsEndImageContext();
+
 }
 - (void)jieping {
     UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, 0);

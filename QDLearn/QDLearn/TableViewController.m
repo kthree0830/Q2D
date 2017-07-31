@@ -32,6 +32,8 @@
         vc.title = @"裁剪";
     } else if ([segue.identifier isEqualToString:@"jieping"]) {
         vc.title = @"截屏";
+    } else if ([segue.identifier isEqualToString:@"shuiyin"]) {
+        vc.title = @"水印";
     }
 }
 
