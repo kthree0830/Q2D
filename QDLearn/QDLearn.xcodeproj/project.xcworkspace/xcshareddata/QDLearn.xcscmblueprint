@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7ED4C466B01FDDE315BC59636B97AA629BAF3A13",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7ED4C466B01FDDE315BC59636B97AA629BAF3A13" : 9223372036854775807,
+    "B988733099D5BDAF6853FB2A121A8396C047E9D2" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "03FF6E95-4BBA-4BAD-B665-5EA42649B459",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7ED4C466B01FDDE315BC59636B97AA629BAF3A13" : "Q2D\/",
+    "B988733099D5BDAF6853FB2A121A8396C047E9D2" : "..\/.."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "QDLearn",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "QDLearn\/QDLearn.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kthree0830\/Q2D.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7ED4C466B01FDDE315BC59636B97AA629BAF3A13"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kthree0830\/KQW.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B988733099D5BDAF6853FB2A121A8396C047E9D2"
+    }
+  ]
+}

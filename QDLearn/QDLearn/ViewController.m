@@ -27,27 +27,32 @@
     // Dispose of any resources that can be recreated.
 }
 - (void)caijian {
-    CGRect frame = {50,200,220,220};
-    UIImageView *imageView = [[UIImageView alloc]initWithFrame:frame];
-    [self.view addSubview:imageView];
+   
     
     
     CGFloat bordeW = 10;
-    UIImage *image = [UIImage imageNamed:@"tupian"];
+    UIImage *image = [UIImage imageNamed:@"750x1334IBD.png"];
     CGSize size = CGSizeMake(image.size.width + 2*bordeW, image.size.width + 2*bordeW);
+    
     UIGraphicsBeginImageContext(size);
-//    UIGraphicsBeginImageContextWithOptions(size, NO, 0);
     
     UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, size.width, size.height)];
     [[UIColor yellowColor]setFill];
     [path fill];
     UIBezierPath *path1 = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(bordeW, bordeW, image.size.width, image.size.width)];
-    [path1 addClip];;
+    [path1 addClip];
     [image drawAtPoint:CGPointMake(bordeW, bordeW)];
     UIImage *i = UIGraphicsGetImageFromCurrentImageContext();
     
-    imageView.image = i;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        CGRect frame = {50,200,300,300};
+        UIImageView *imageView = [[UIImageView alloc]initWithFrame:frame];
+        [self.view addSubview:imageView];
+        imageView.image = i;
+    });
+   
     UIGraphicsEndImageContext();
+    
 }
 
 @end
