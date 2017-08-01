@@ -7,7 +7,7 @@
 //
 
 #import "TableViewController.h"
-
+#import "ViewController.h"
 @interface TableViewController ()
 
 @end
@@ -27,6 +27,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UIViewController *vc = segue.destinationViewController;
+    
     if ([segue.identifier isEqualToString:@"caijian"]) {
         vc.title = @"裁剪";
     } else if ([segue.identifier isEqualToString:@"jieping"]) {
@@ -37,10 +38,24 @@
         vc.title = @"矩形";
     } else if ([segue.identifier isEqualToString:@"shanxing"]) {
         vc.title = @"扇形";
+    } else if ([segue.identifier isEqualToString:@"yuanxing"]) {
+        vc.title = @"圆形";
+    } else if ([segue.identifier isEqualToString:@"buguize"]) {
+        vc.title = @"不规则";
+    } else if ([segue.identifier isEqualToString:@"xian"]) {
+        vc.title = @"线";
+    } else if ([segue.identifier isEqualToString:@"quxian"]) {
+        vc.title = @"曲线";
+    } else if ([segue.identifier isEqualToString:@"huabing"]) {
+        vc.title = @"画饼";
+    } else if ([segue.identifier isEqualToString:@"huawenzi"]) {
+        vc.title = @"画文字";
     }
+    vc.view.backgroundColor = [UIColor darkGrayColor];
 }
 
 #pragma mark - Table view data source
+
 
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 //#warning Incomplete implementation, return the number of sections

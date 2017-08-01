@@ -13,7 +13,9 @@
 @end
 
 @implementation ViewController
+- (void)dealloc {
 
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     if ([self.title isEqualToString:@"裁剪"]) {
@@ -28,21 +30,44 @@
         [self shuiyin];
     }
     if ([self.title isEqualToString:@"矩形"]) {
-        _customView = [[QDView alloc]initWithFrame:self.view.bounds];
-        _customView.backgroundColor = [UIColor grayColor];
-        _customView.type = QDDrawTypeRect;
-        [self.view addSubview:_customView];
-
+        QDView *customView = [[QDView alloc]initWithFrame:self.view.bounds];
+        customView.backgroundColor = [UIColor grayColor];
+        customView.type = QDDrawTypeRect;
+        [self.view addSubview:customView];
+        
     }
     if ([self.title isEqualToString:@"扇形"]) {
         self.customView.type = QDDrawTypeshanxing;
         [self.view addSubview:self.customView];
-        
     }
-}
-- (void)performSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if ([self.title isEqualToString:@"圆形"]) {
+        self.customView.type = QDDrawTypeRounded;
+        [self.view addSubview:self.customView];
+    }
+    if ([self.title isEqualToString:@"线"]) {
+        self.customView.type = QDDrawTypeLine;
+        [self.view addSubview:self.customView];
+    }
+
+    if ([self.title isEqualToString:@"不规则"]) {
+        self.customView.type = QDDrawTypeBuguize;
+        [self.view addSubview:self.customView];
+    }
+    if ([self.title isEqualToString:@"曲线"]) {
+        self.customView.type = QDDrawTypeQuxian;
+        [self.view addSubview:self.customView];
+    }
+    if ([self.title isEqualToString:@"画饼"]) {
+        self.customView.type = QDDrawTypeHuabing;
+        [self.view addSubview:self.customView];
+    }
+    if ([self.title isEqualToString:@"画文字"]) {
+        self.customView.type = QDDrawTypeHuawenzi;
+        [self.view addSubview:self.customView];
+    }
 
 }
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     if ([self.title isEqualToString:@"截屏"]) {
         [self jieping];
@@ -112,4 +137,12 @@
     }
     return _customView;
 }
+
+
+
+/*
+ 
+ 
+
+ */
 @end
